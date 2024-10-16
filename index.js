@@ -183,9 +183,9 @@ app.get('/stocks/sort/pricing', (req, res) => {
   const pricing = req.query.pricing;
   let sortedStocks;
 
-  if (pricing === 'highToLow') {
+  if (pricing === 'high-to-low') {
     sortedStocks = stocks.sort(sortStocksByPriceDescending);
-  } else if (pricing === 'lowToHigh') {
+  } else if (pricing === 'low-to-high') {
     sortedStocks = stocks.sort(sortStocksByPriceAscending);
   } else {
     sortedStocks = stocks;
@@ -209,9 +209,9 @@ app.get('/stocks/sort/growth', (req, res) => {
   let stocksCopy = stocks.slice();
   let sortedStocks;
 
-  if (growth === 'highToLow') {
+  if (growth === 'high-to-low') {
     sortedStocks = stocksCopy.sort(sortStocksByGrowthDescending);
-  } else if (growth === 'lowToHigh') {
+  } else if (growth === 'low-to-high') {
     sortedStocks = stocksCopy.sort(sortStocksByGrowthAscending);
   } else {
     sortedStocks = stocks;
